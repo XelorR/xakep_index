@@ -2,7 +2,7 @@ import csv
 from bs4 import BeautifulSoup
 
 
-def parse_file(issue_number: str = "259"):
+def parse_file(issue_number: str = "261"):
     with open(f"{issue_number}.csv", "w", encoding="utf-8") as f:
         csvwriter = csv.writer(f)
         csvwriter.writerow("issue name comment".split())
