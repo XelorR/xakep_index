@@ -9,7 +9,7 @@ def clear_name(f: str) -> str:
         return (re.findall(r"\((\d+)\)", f)[0]+".pdf").zfill(7)
     else:
         try:
-            return re.findall(r"\d+", f)[0]+".pdf"
+            return re.findall(r"\d+", f)[0]+".pdf".zfill(7)
         except IndexError:
             return f
 
