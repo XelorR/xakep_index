@@ -20,6 +20,6 @@ def parse_file(issue_number: str = "261"):
         f.close()
 
 
-for i in [194] + list(range(211, 260)):
+for i in [194] + list(range(211, 262)):
     print("Processing file", i)
     parse_file(str(i).zfill(3))
