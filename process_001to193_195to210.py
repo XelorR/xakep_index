@@ -3,13 +3,13 @@ from bs4 import BeautifulSoup
 
 
 def parse_file(issue_number: str = "193"):
-    f = open(f"{issue_number}.html", encoding="utf-8")
+    f = open(f"html/{issue_number}.html", encoding="utf-8")
 
     soup = BeautifulSoup(f, "lxml")
     issue_content = soup.find("div", attrs={"id": "issue-content"})
     content = [e.text.split(". ", 1) for e in issue_content.find_all("li")]
 
-    with open(f"{issue_number}.csv", "w", encoding="utf-8") as c:
+    with open(f"csv/{issue_number}.csv", "w", encoding="utf-8") as c:
         csvwriter = csv.writer(c)
         csvwriter.writerow("issue name content".split())
         for i in content:
